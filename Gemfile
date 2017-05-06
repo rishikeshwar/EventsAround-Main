@@ -9,7 +9,13 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+group :production do 
+  gem 'pg'
+end
+
+group :development do 
+  gem 'mysql2', '>= 0.3.18', '< 0.5'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
