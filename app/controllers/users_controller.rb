@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all()
-    @have = User.find(5)
-    puts "#{@have.name}"
+    @have = nil
+    if session[:id] != nil
+    @have = User.find(session[:id])
+  end
   end
 
   # GET /users/1
