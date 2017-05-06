@@ -2,9 +2,12 @@
 	<% if flash[:alert] %>
 		<p id="notice"><%= flash[:alert] %></p>
 	<% end %>
-
+	<h2>User Logged in</h2>
 	<% if @have != nil%>
 		<h2><%= @have.name %></h2>
+		<% if session[:user_id] != nil%>
+			<%= link_to 'Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %>
+		<% end %>
 	<% else %>
 		<h2>Nothing</h2>
 	<% end %>
@@ -17,9 +20,7 @@
 				<%= text_field_tag :name, params[:name] %>
 				<%= label_tag :password, 'Password' %>
 				<%= password_field_tag :password, params[:password] %> <br>
-				<% if session[:user_id] != nil%>
-					<%= link_to 'Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %>
-				<% end %>
+				
 			</div>
 			<div>
 				<%= submit_tag "Login" %>

@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all()
     @have = nil
-    if session[:id] != nil
-      @have = User.find(session[:id])
+    if session[:user_id] != nil
+      @have = User.find(session[:user_id])
     end
   end
 
