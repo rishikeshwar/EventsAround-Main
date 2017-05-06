@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     @users = User.all()
     @have = nil
     if session[:id] != nil
-    @have = User.find(session[:id])
-  end
+      @have = User.find(session[:id])
+    end
   end
 
   # GET /users/1
