@@ -1,0 +1,29 @@
+<div>
+	<% if flash[:alert] %>
+		<p id="notice"><%= flash[:alert] %></p>
+	<% end %>
+
+	<% if @have != nil%>
+		<h2><%= @have.name %></h2>
+	<% else %>
+		<h2>Nothing</h2>
+	<% end %>
+
+	<%= form_tag do %>
+		<fieldset>
+			<legend>Please Log In</legend>
+			<div>
+				<%= label_tag :name, 'Name' %>
+				<%= text_field_tag :name, params[:name] %>
+				<%= label_tag :password, 'Password' %>
+				<%= password_field_tag :password, params[:password] %> <br>
+				<% if session[:user_id] != nil%>
+					<%= link_to 'Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</div>
+			<div>
+				<%= submit_tag "Login" %>
+			</div>
+		</fieldset>
+	<% end %>
+</div>
