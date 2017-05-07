@@ -6,11 +6,16 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all()
-    @have = nil
     if session[:user_id] != nil
       @have = User.find(session[:user_id])
-    end
-  end
+      if @have.name == "rishikeshwar"
+        render :index
+        return
+      else 
+        redirect_to login_path, alert: "You should be logged in as Admin"
+      end
+   end
+ end
 
   # GET /users/1
   # GET /users/1.json
@@ -30,10 +35,16 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    if User.exists?(name: @user.name)
+      redirect_to new_user_path , alert: "User Name already Exists"
+      return 
+    else 
+      puts "NO"
+    end
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
