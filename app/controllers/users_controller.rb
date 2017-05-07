@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    session[:user_id] = nil
     @user = User.new(user_params)
     if User.exists?(name: @user.name)
       redirect_to new_user_path , alert: "User Name already Exists"
@@ -46,6 +47,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        session[:user_id] = @user.id
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
