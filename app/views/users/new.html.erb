@@ -1,3 +1,5 @@
+<div class="userscontrollernew">
+
 <% if flash[:alert] %>
 		<p id="notice"><%= flash[:alert] %></p>
 <% end %>
@@ -7,3 +9,5 @@
 <%= render 'form', user: @user %>
 
 <%= link_to 'Back', users_path %>
+
+</div>

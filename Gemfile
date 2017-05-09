@@ -16,6 +16,8 @@ end
 group :development do 
   gem 'mysql2', '>= 0.3.18', '< 0.5'
 end
+
+gem "font-awesome-rails"
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

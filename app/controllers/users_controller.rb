@@ -6,15 +6,18 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all()
+    @have = nil
     if session[:user_id] != nil
       @have = User.find(session[:user_id])
-      if @have.name == "rishikeshwar"
+      if @have.name == "rishikeshwar" and @have != nil
         render :index
         return
       else 
         redirect_to login_path, alert: "You should be logged in as Admin"
       end
-   end
+   else 
+    redirect_to login_path, alert: "You should be logged in as Admin"
+  end
  end
 
   # GET /users/1
