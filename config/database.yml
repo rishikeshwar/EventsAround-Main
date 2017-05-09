@@ -17,6 +17,11 @@ default: &default
   password: "rishikeshwar"
   socket: /var/run/mysqld/mysqld.sock
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: thebestapp12
+
 development:
   <<: *default
   database: scaff_development
