@@ -11,10 +11,17 @@ gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
 group :production do 
   gem 'pg'
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
 group :development do 
   gem 'mysql2', '>= 0.3.18', '< 0.5'
+  gem 'rails_12factor'
+end
+
+group :production do
+  
 end
 
 gem "font-awesome-rails"
