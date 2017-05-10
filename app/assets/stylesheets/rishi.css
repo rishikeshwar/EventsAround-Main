@@ -134,6 +134,197 @@ p {
 	}
 }
 
+/* sessionscontrollernew header */
+
+.sessionscontrollernew .header {
+	margin-top: 0px !important;
+}
+
+.sessionscontrollernew .header .enter {
+	margin-top: 10px 10px 10px 10px !important;
+}
+
+.sessionscontrollernew .header .enter .notice {
+	padding-bottom: 0px !important;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	height: 20px !important;
+	width: 1000px !important;
+}
+
+
+.sessionscontrollernew .header h2 {
+	font-family: Baskerville,Baskerville Old Face,Hoefler Text,Garamond,Times New Roman,serif !important;
+	color: #3c3c3c;
+	margin-top: 20px;
+	margin-left: 157px;
+	margin-bottom: 0px;
+}
+
+.sessionscontrollernew .header h1 {
+	font-family: Baskerville,Baskerville Old Face,Hoefler Text,Garamond,Times New Roman,serif !important;
+	color: #6666ff;
+	margin-top: 0px !important;
+	margin-left: 125px;
+}
+
+.sessionscontrollernew hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+
+.sessionscontrollernew .header i {
+	margin-right: 10px !important;
+	color: #ebebe0 !important;
+}
+
+.sessionscontrollernew .header .gmail a {
+	margin-left: 5px !important;
+	padding: 13px 30px 13px 30px !important;
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	font-size: 14px !important;
+	font-weight: 700px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 auto; 
+	color: #fff;
+	background-color: #08f;
+}
+
+.sessionscontrollernew .header .facebook a {
+	background-color: #3b5998;
+	margin-left: 5px !important;
+	padding: 13px 20px 13px 20px !important;
+	display: inline-block;
+	border-radius: 5px;
+	border: none;
+	font-size: 14px !important;
+	font-weight: 700px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 auto; 
+	color: #fff;
+	display: inline-block !important;
+
+}
+
+.sessionscontrollernew .header .loginthrough {
+	margin-top: 50px; 
+}
+
+.sessionscontrollernew .verticalLine {
+  border-left: thick solid #ff0000;
+}
+
+/* input boxes starts */
+
+.sessionscontrollernew .header .enter {
+	padding-top: 20px !important;
+	margin: 50px 30px 30px 30px !important;
+}
+
+.sessionscontrollernew .header .enter i {
+	margin-left: 10px !important;
+	color: #222222 !important;
+	font-size: 20px !important;
+}
+
+.sessionscontrollernew .header .enter .buttonlogin i {
+	margin-left: 10px !important;
+	padding-left: 0px !important;
+}
+
+
+.sessionscontrollernew .header .enter p {
+	padding-bottom: 80px;
+	color: #737373;
+}
+
+.sessionscontrollernew .header .enter h2 {
+	color: #4c4c4c;
+	margin: 20px 0 20px; 
+}
+
+.sessionscontrollernew .header .enter .input-group {
+	margin-bottom: 15px;
+}
+
+.sessionscontrollernew .header .enter .form-control {
+	border-radius: 0 !important;
+}
+
+.sessionscontrollernew .header .enter span {
+	border-radius: 0 !important;
+}
+
+.sessionscontrollernew .header .enter .btn {
+	display: inline-block !important;
+	padding-left: 10px !important;
+	margin-top: 10px;
+	margin-left: 295px;
+	border: 0 !important;
+	border-radius: 5px !important;
+	width: 200px;
+	font-size: 15px;
+	background-color: #f08080;
+	color: #fff;
+}
+
+.sessionscontrollernew .header .enter .btn:hover {
+	background-color: #a85959 !important;
+	color: #fff !important;
+}
+
+.sessionscontrollernew .header .enter i {
+	height: 9px;
+	width: 20px;
+	font-size: 20px;
+}
+
+.sessionscontrollernew .header .enter textarea,
+.sessionscontrollernew .header .enter textarea::placeholder {
+	font-size: 20px !important;
+}
+
+/* input boxes ends */
+
+.sessionscontrollernew .header {
+	height: 600px;
+	width: 100%;
+	padding: 30px 0 30px;
+	margin-top: 50px;
+	background-image: url(../imges/bg3.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+
+.sessionscontrollernew .header img {
+	height: 500px;
+	width: 450px;
+	margin: 50px 0 0 40px;
+}
+
+
+.sessionscontrollernew .header h1,
+.sessionscontrollernew .header p,
+.sessionscontrollernew .header button {
+	margin-top: 20px;
+}
+
+.sessionscontrollernew .header .btn {
+	border-radius: 0;
+	margin: 40px 20px;
+}
+
+/* sessionscontrollernew header */
+
 /* Services */
 
 .services {
@@ -375,6 +566,7 @@ p {
 /* Footer */ 
 
 .footer {
+	margin-top: 100px !important;
 	padding: 30px;
 	color: #cccccc;
 	background-color: #222222;

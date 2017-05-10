@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   def new
   	@have = User.find_by(id: session[:user_id])
   end
+  
 
   def create
   	@user = User.find_by(name: params[:name])
