@@ -42,6 +42,13 @@
   </div>
 
   <!-- Navigation ends here -->
+  <div class="applicationhtml">
+    <div class="current-user">
+      <% if @have != nil%>
+        <h3>Current User:  <%= @have.name %>  <%= link_to '    Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+      <% end %>
+    </div>
+  </div>
 
   <body>
     <%= yield %>

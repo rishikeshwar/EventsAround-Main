@@ -67,12 +67,6 @@
                     </div>
             		<div class="buttonlogin">
            				<button class="btn btn-lg btn-primary wow fadeInUp" data-wow-delay="1s"><i class="fa fa-sign-in " aria-hidden="true" ></i>Login</button>
-            			<% if @have != nil%>
-							<h2><%= @have.name %></h2>
-							<% if session[:user_id] != nil%>
-								<%= link_to 'Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %>
-							<% end %>
-						<% end %>
             		</div>
           		</div>	
           	</fieldset>

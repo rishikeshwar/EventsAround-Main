@@ -50,6 +50,16 @@ p {
 	border: 1px solid #fff !important;
 }
 
+/* applicationhtml starts here */
+
+.applicationhtml .current-user {
+	margin-top: 60px !important;
+	text-align: right !important;
+}
+
+/* applicationhtml ends here */
+
+
 /* Navigation */
 
 .navbar {
@@ -138,10 +148,7 @@ p {
 
 .sessionscontrollernew .header {
 	margin-top: 0px !important;
-}
-
-.sessionscontrollernew .header .enter {
-	margin-top: 10px 10px 10px 10px !important;
+	padding-top: 0px !important;
 }
 
 .sessionscontrollernew .header .enter .notice {
@@ -156,8 +163,9 @@ p {
 .sessionscontrollernew .header h2 {
 	font-family: Baskerville,Baskerville Old Face,Hoefler Text,Garamond,Times New Roman,serif !important;
 	color: #3c3c3c;
+	text-transform: capitalize !important;
 	margin-top: 20px;
-	margin-left: 157px;
+	text-align: center !important;
 	margin-bottom: 0px;
 }
 
@@ -165,7 +173,7 @@ p {
 	font-family: Baskerville,Baskerville Old Face,Hoefler Text,Garamond,Times New Roman,serif !important;
 	color: #6666ff;
 	margin-top: 0px !important;
-	margin-left: 125px;
+	text-align: center !important;
 }
 
 .sessionscontrollernew hr {
@@ -175,6 +183,7 @@ p {
     color: #333; /* old IE */
     background-color: #333; /* Modern Browsers */
 }
+
 
 .sessionscontrollernew .header i {
 	margin-right: 10px !important;
@@ -224,8 +233,8 @@ p {
 /* input boxes starts */
 
 .sessionscontrollernew .header .enter {
-	padding-top: 20px !important;
-	margin: 50px 30px 30px 30px !important;
+	padding-top: 0px !important;
+	margin: 0px 30px 30px 30px !important;
 }
 
 .sessionscontrollernew .header .enter i {
@@ -252,6 +261,7 @@ p {
 
 .sessionscontrollernew .header .enter .input-group {
 	margin-bottom: 15px;
+	max-width: 500px !important;
 }
 
 .sessionscontrollernew .header .enter .form-control {
@@ -609,21 +619,21 @@ p {
 */
 
 .sessionscontrollernew {
-	padding-top: 30px;
+	padding-top: 0px;
 }
 
 .userscontrollernew {
-	padding-top: 30px;
+	padding-top: 0px;
 }
 
 .userscontrollerindex {
-	padding-top: 30px;
+	padding-top: 0px;
 }
 
 .userscontrolleredit {
-	padding-top: 30px;
+	padding-top: 0px;
 }
 
 .userscontrollershow {
-	padding-top: 30px;
+	padding-top: 0px;
 }
