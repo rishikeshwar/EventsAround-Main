@@ -13,7 +13,16 @@ Rails.application.routes.draw do
   	post 'login' => :create
   	delete 'logout' => :destroy
   end
+
+  
+
+  
+
   root 'home#index'
-  resources :users
+  resources :users do 
+    get 'personalinfos' => 'personalinfos#index'
+    get 'personalinfos/edit'
+    post 'personalinfos/edit'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

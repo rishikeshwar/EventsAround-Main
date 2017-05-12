@@ -335,6 +335,36 @@ p {
 
 /* sessionscontrollernew header */
 
+/* personalinfocontrollerindex starts here */
+
+.personalinfocontrollerindex .column1 {
+	background-color: #66c2ff !important;
+	padding-bottom: 300px !important;
+	padding-top: 30px !important;
+	border-radius: 30px !important;
+	margin-top: 40px !important;
+	text-align: center;
+}
+
+.personalinfocontrollerindex .column1 li {
+	text-align: center;
+}
+
+.personalinfocontrollerindex .column11 {
+	background-color: #007acc;
+	border-radius: 40px !important;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	height: 70px;
+}
+
+.personalinfocontrollerindex .column1 .column11 h2 {
+	color: #222222 !important;
+}
+
+/* personalinfocontrollerindex ends here */
+
 /* Services */
 
 .services {
