@@ -29,7 +29,6 @@ h1,
 h2,
 h4 {
 	font-family: 'PT Sans Narrow', Arial, sans-serif;
-	text-transform: uppercase;
 	font-weight: 700;
 }
 
@@ -176,7 +175,7 @@ p {
 	text-align: center !important;
 }
 
-.sessionscontrollernew hr {
+hr {
     border: none;
     height: 1px;
     /* Set the hr color */
@@ -336,6 +335,10 @@ p {
 /* sessionscontrollernew header */
 
 /* personalinfocontrollerindex starts here */
+
+.personalinfocontrollerindex .container12 h2 {
+	text-align: center !important;
+}
 
 .personalinfocontrollerindex .column1 {
 	background-color: #66c2ff !important;

@@ -24,22 +24,21 @@
 
  <body>
   <!-- Navigation ends here -->
-
+  <% if Personalinfo.where(:user_id => session[:user_id]).present? %>
+  <% @check = Personalinfo.find_by_user_id(session[:user_id]) %>
 <div class="personalinfocontrollerindex container">
-  <div class="row container">
-    <div class="col-lg-3 col-md-3 column1">
-      <div class="column11">
-        <li><a href="personalinfos/edit"><h2>Edit</h2></a></li>
-      </div>
+  <div class="row container12">
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-3 col-md-3">
+
+        <h2>User Id: <%= @check.user_id %></h2>
+        <h2>Name: <%= @check.name %></h2>
     </div>
-    <div class="col-lg-1 col-md-1"></div>
-    <div class="col-lg-6 col-md-6">
-      <% if Personalinfo.where(:user_id => session[:user_id]).present? %>
-        <% @check = Personalinfo.find_by_user_id(session[:user_id]) %>
-        <h2><%= @check.user_id %></h2>
-        <h2><%= @check.name %></h2>
-        <h2><%= @check.phoneno %></h2>
-        <h2><%= @check.emailid %></h2>
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-3 col-md-3">
+        <h2>Phone No: <%= @check.phoneno %></h2>
+        <h2>Email Id: <%= @check.emailid %></h2>
+    </div>
         <% puts "Yeah yeah it is coming" %>
       <% else %>
         <h1>Nothing Exist Press Edit </h1>
@@ -48,8 +47,56 @@
   </div>    
 </div>
 
-  <!--- Header starts here -->
+   <body>
+  <!-- Navigation ends here -->
 
+<div class="sessionscontrollernew personalinfoscontrollerindex container" >
+
+  <div id="header" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-6 wow bounceInLeft">
+          <hr>
+          <h2>UPDATE</h2>
+          <%= form_tag do %>
+      <fieldset>
+              <div class="enter">
+                <div class="notice">
+                  <% if flash[:alert] %>
+              <p id="notice"><%= flash[:alert] %></p>
+            <% end %>
+          </div>
+                <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user-circle" aria-hidden="true" ></i></span>
+
+                    <%= text_field_tag(:name, params[:name], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Name') %>
+                  </div>
+                <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-phone" aria-hidden="true" ></i></span>
+                    <%= text_field_tag(:phoneno, params[:phoneno], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Phone Number') %>
+                    </div>
+                    <% params[:user_id] = session[:user_id] %>
+                    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope " aria-hidden="true" ></i></span>
+                    <%= text_field_tag(:emailid, params[:emailid], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Email Id') %>
+                    </div>
+
+                <div class="buttonlogin">
+                  <button class="btn btn-lg btn-primary wow fadeInUp" data-wow-delay="1s"><i class="fa fa-sign-in " aria-hidden="true" ></i>Update</button>
+                </div>
+              </div>  
+            </fieldset>
+      <% end %>
+        </div>
+        <div class="col-lg-6 col-md-6 wow bounceInRight">
+          <img src="devices.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

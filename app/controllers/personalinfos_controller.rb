@@ -6,6 +6,7 @@ class PersonalinfosController < ApplicationController
 	end
 
 	def new
+		puts "atleast new is being called"
     	@personalinfo = Personalinfo.new
   	end
 
@@ -14,6 +15,7 @@ class PersonalinfosController < ApplicationController
   	end
 
 	def create 
+		puts "This is being called and thats it you are pro"
 		@user = User.find(session[:user_id])
 		@personalinfo = Personalinfo.new(personalinfo_params)
 		if Personalinfo.exists?(user_id: @personalinfo.user_id)
@@ -23,7 +25,7 @@ class PersonalinfosController < ApplicationController
 		else 
 			@personalinfo.save
 		end
-		redirect_to user_path(@user)
+		redirect_to user_personalinfos_path
 		puts "coming"
 	end
 
