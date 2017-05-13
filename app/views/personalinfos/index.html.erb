@@ -26,27 +26,23 @@
   <!-- Navigation ends here -->
   <% if Personalinfo.where(:user_id => session[:user_id]).present? %>
   <% @check = Personalinfo.find_by_user_id(session[:user_id]) %>
+  <% @check2 = User.find_by_id(session[:user_id]) %>
 <div class="personalinfocontrollerindex container">
   <div class="row container12">
-    <div class="col-lg-2 col-md-2"></div>
-    <div class="col-lg-3 col-md-3">
-
-        <h2>User Id: <%= @check.user_id %></h2>
-        <h2>Name: <%= @check.name %></h2>
-    </div>
-    <div class="col-lg-2 col-md-2"></div>
-    <div class="col-lg-3 col-md-3">
-        <h2>Phone No: <%= @check.phoneno %></h2>
-        <h2>Email Id: <%= @check.emailid %></h2>
+    <div class="col-lg-4 col-md-4"></div>
+    <div class="col-lg-6 col-md-6">
+        <h2><i class="fa fa-user-circle" aria-hidden="true" ></i><%= @check.name %></h2>
+        <h3><i class="fa fa-user-circle-o" aria-hidden="true" ></i><%= @check2.name %></h3>
+        <h3><i class="fa fa-phone" aria-hidden="true" ></i><%= @check.phoneno %></h2>
+        <h3><i class="fa fa-envelope" aria-hidden="true" ></i><%= @check.emailid %></h2>
     </div>
         <% puts "Yeah yeah it is coming" %>
-      <% else %>
+    <% else %>
       <div class="col-lg-4 col-md-4"></div>
-        <h1>Nothing Exist so Update it</h1>
-      <% end %>
-    </div>
-  </div>    
-</div>
+      <h1>Nothing Exist so Update it</h1>
+    <% end %>
+  </div>
+</div>  
 
    <body>
   <!-- Navigation ends here -->

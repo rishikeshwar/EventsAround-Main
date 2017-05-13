@@ -307,7 +307,7 @@ hr {
 	width: 100%;
 	padding: 30px 0 30px;
 	margin-top: 50px;
-	background-image: url(../imges/bg3.jpg);
+	background-image: url(../bg3.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -337,7 +337,12 @@ hr {
 /* personalinfocontrollerindex starts here */
 
 .personalinfocontrollerindex .container12 h2 {
-	text-align: center !important;
+	text-align: left !important;
+}
+
+.personalinfocontrollerindex .container12 i {
+	margin-right: 20px !important;
+	font-size: 25px !important;
 }
 
 .personalinfocontrollerindex .column1 {
