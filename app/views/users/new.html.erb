@@ -4,10 +4,17 @@
 		<p id="notice"><%= flash[:alert] %></p>
 <% end %>
 
-<h1>New User</h1>
+<div class="headerinnew">
+ <h2><center>New User</center> <%= link_to(('<i class="fa fa-arrow-left" aria-hidden="true" > Back</i>').html_safe, users_path,  class: 'btn-lg btn-danger wow fadeInUp', data: {wow: {delay: 'ls'}}) %><h1>
+
+ 
+
+
+</div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
+
+
 
 </div>
