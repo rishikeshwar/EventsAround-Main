@@ -11,37 +11,36 @@
     </div>
   <% end %>
 <fieldset>
-<div class="newuser">
-  <div class="field">
-    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
 
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user-circle" aria-hidden="true" ></i></span>
+  <div class="newuser">
+    <div class="field">
+      <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+       <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user-circle" aria-hidden="true" ></i></span>
+          <%= f.text_field(:name, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Username') %>
+      </div>
+    </div>
 
-                    <%= f.text_field(:name, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Username') %>
-                  </div>
+    <div class="field">
+      <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+       <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key " aria-hidden="true" ></i></span>
+          <%= f.password_field(:password, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Password') %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key " aria-hidden="true" ></i></span>
+        <%= f.password_field(:password_confirmation, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'password Confirmation') %>
+     </div>
+    </div>
+
+    <div class="actions">
+     <%= button_tag(class: 'btn-lg btn-success wow fadeInUp', data: {wow: {delay: 'ls'}} )do  %>
+        <i class="fa fa-user" aria-hidden="true" > Create User</i>
+      <% end %>
+    </div>
+
   </div>
-
-  <div class="field">
-    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
-                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key " aria-hidden="true" ></i></span>
-                    <%= f.password_field(:password, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Password') %>
-                    </div>
-  </div>
-
-  <div class="field">
-    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
-                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key " aria-hidden="true" ></i></span>
-                    <%= f.password_field(:password_confirmation, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'password Confirmation') %>
-                    </div>
-  </div>
-
-  <div class="actions">
   
-    <%= button_tag(class: 'btn-lg btn-success wow fadeInUp', data: {wow: {delay: 'ls'}} )do  %>
-    <i class="fa fa-user" aria-hidden="true" > Create User</i>
-    <% end %>
-
-  </div>
-  </div>
 </fieldset>
 <% end %>

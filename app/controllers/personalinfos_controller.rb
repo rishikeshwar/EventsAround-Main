@@ -2,6 +2,7 @@ class PersonalinfosController < ApplicationController
 
 	def index 
 		@user = User.find(session[:user_id])
+		@personalinfo = Personalinfo.new
 		render :index
 	end
 
@@ -21,9 +22,15 @@ class PersonalinfosController < ApplicationController
 		if Personalinfo.exists?(user_id: @personalinfo.user_id)
 			a = Personalinfo.find_by_user_id(session[:user_id])
 			a.update(personalinfo_params)
-			a.save
+			if a.save
+			else 
+				flash[:notice] = a.errors.messages
+			end
 		else 
-			@personalinfo.save
+			if @personalinfo.save
+			else 
+				flash[:notice] = @personalinfo.errors.messages
+			end
 		end
 		redirect_to user_personalinfos_path
 		puts "coming"
