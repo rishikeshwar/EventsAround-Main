@@ -1,16 +1,41 @@
 <div class="userscontrollernew">
 
-<% if flash[:alert] %>
-		<p id="notice"><%= flash[:alert] %></p>
-<% end %>
+
 
 <div class="headerinnew">
- <h2><center>New User</center> <%= link_to(('<i class="fa fa-arrow-left" aria-hidden="true" > Back</i>').html_safe, users_path,  class: 'btn-lg btn-danger wow fadeInUp', data: {wow: {delay: 'ls'}}) %><h1>
-
- 
-
-
+	<%= link_to(('<i class="fa fa-arrow-left" aria-hidden="true" > Back</i>').html_safe, login_path,  class: 'btn-lg btn-danger wow fadeInUp', data: {wow: {delay: 'ls'}}) %>
+	<div class="heading">
+ 		<h2><center><i class="fa fa-user-secret"></i>New User</center> <h1>
+ 	</h1>
 </div>
+
+<div class="userscontrollernewerrors">
+	<div class="row">
+		<div class="col-lg-4 col-md-4"></div>
+		<div class="col-lg-6 col-md-6">
+			<div class="userscontrollernewvalidation container">
+				<% if flash[:alert] %>
+					<div class="iclass">
+						<p><i class="fa fa-dot-circle-o " aria-hidden="true" ></i><%= flash[:alert] %></p>
+					</div>
+				<% end %>
+            	<% count = 0 %>
+            	<% if flash[:notice] %>
+                	<% flash[:notice].to_s.split('$').each do |msg| %>
+                    	<% if count%2 == 1 %>
+            	        	<div class="iclass">
+                	        	<p><i class="fa fa-dot-circle-o " aria-hidden="true" ></i><%= msg %></p><br>
+	                        </div>
+                    	<% end %>
+                    	<% count += 1 %>
+	                <% end %>
+            	<% end %>
+	        </div>
+    	</div>
+	</div>
+</div>
+
+
 
 <%= render 'form', user: @user %>
 

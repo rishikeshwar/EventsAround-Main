@@ -391,6 +391,42 @@ hr {
 
 /* personalinfocontrollerindex ends here */
 
+
+/* new user start here */
+
+.newuser .field .input-group {
+	margin-bottom: 15px;
+	max-width: 500px !important;
+}
+
+.headerinnew {
+	margin-top: 70px !important;
+}
+
+.headerinnew .heading {
+	color: #2eb8b8;
+	margin-bottom: 40px !important;
+}
+
+/* new user ends here */
+
+/* userscontrollererrors starts here */
+
+.userscontrollernewerrors .userscontrollernewvalidation p {
+	color: green !important;
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+}
+
+.userscontrollernewerrors .userscontrollernewvalidation i {
+	font-size: 15px !important;
+	margin-right: 10px !important;
+	padding-top: 5px !important;
+}
+
+/* userscontrollererrors ends here */
+
 /* Services */
 
 .services {
