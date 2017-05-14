@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  "This should skip the authorization which has been defined in application_controller.rb"
   skip_before_action :authorize, only: [:new, :create, :index]
 
   # GET /users
   # GET /users.json
+
+  "This is the page which displays all the users with thier access. This is highly secured and
+  confidential anyone entering this can control the 5 elements the universe and everthing that they
+  see inside this program. Lets get to the technical part first it checks if they are using proper 
+  credentials then if the name is ************ then he can do whatevr he wants else it sends them to the
+  main page stating an alert"
   def index
     @users = User.all()
     @have = nil
@@ -36,6 +44,10 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+
+  "Whenever it reaches 3000/users/new this method will be called if the entered usrname is already taken
+  then an alert is flashed. If everthing passes the credentials are saved. While saving it is again 
+  validated and errors are flashed through flash[:notices] and rendered according to that" 
   def create
     session[:user_id] = nil
     @user = User.new(user_params)
@@ -49,7 +61,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'User was successfully createn checked d.' }
         format.json { render :show, status: :created, location: @user }
         session[:user_id] = @user.id
       else
@@ -61,6 +73,8 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
+
+  "This is used to update the username and password"
   def update
     respond_to do |format|
       if @user.update(user_params)

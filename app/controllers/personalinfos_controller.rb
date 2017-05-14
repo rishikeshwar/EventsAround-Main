@@ -15,8 +15,13 @@ class PersonalinfosController < ApplicationController
 
   	end
 
+  	"This method is called from personalinfo controller index.html.erb. What happens exactly is
+  	the user enters all their personal details and when the update button is pressed first it is
+  	checked if it already exists and that is taken care by the first if condition. If it exists
+  	then update it else a new one is created but everytime the validations are checked and notices
+  	are flashed, then if everything is satisfied it is redirected to that same page with the updated
+  	information seen on the top"
 	def create 
-		puts "This is being called and thats it you are pro"
 		@user = User.find(session[:user_id])
 		@personalinfo = Personalinfo.new(personalinfo_params)
 		if Personalinfo.exists?(user_id: @personalinfo.user_id)
@@ -33,9 +38,9 @@ class PersonalinfosController < ApplicationController
 			end
 		end
 		redirect_to user_personalinfos_path
-		puts "coming"
 	end
 
+	"This method personalinfo_params is called from create method"
 	def personalinfo_params 
 		params.permit(:id, :user_id, :name, :phoneno, :emailid)
 	end
