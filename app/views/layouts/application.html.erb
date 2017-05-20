@@ -32,12 +32,13 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
           <li><a href="/#team">Team</a></li>
           <li><a href="/users/new">SignUp</a></li>
           <% @have = User.find_by(id: session[:user_id]) %>
           <% if @have != nil%>
-            <li><a>User:  <%= @have.name %></a></li><li> <%= link_to '    Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <li><a>User:  <%= @have.name %></a></li>
+            <li><%= link_to 'MyAccount', user_personalinfos_path(session[:user_id]) %></li>
+            <li> <%= link_to 'Logout',logout_url , method: :delete, data: { confirm: 'Are you sure?' } %></li>
           <% else %>
             <li><a href="/login">Login</a></li>
           <% end %>
