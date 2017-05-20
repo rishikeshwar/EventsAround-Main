@@ -8,6 +8,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+	margin-top: 0px !important;
 }
 
 li {
@@ -76,6 +79,10 @@ p {
 .navbar a:hover{
 	opacity: 1;
 	background-color: #111111 !important;
+}
+
+#myNavbar {
+	margin-bottom: 0px !important;
 }
 
 /* Header */
@@ -406,6 +413,15 @@ hr {
 .headerinnew .heading {
 	color: #2eb8b8;
 	margin-bottom: 40px !important;
+}
+
+.newuser .field .actions {
+	text-align: right !important;
+	margin-left: 20px !important;
+}
+
+.headerinnew .btn-back {
+	margin-left: 30px !important;
 }
 
 /* new user ends here */
