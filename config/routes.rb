@@ -14,10 +14,6 @@ Rails.application.routes.draw do
   	delete 'logout' => :destroy
   end
 
-  
-
-  
-
   root 'home#index'
   resources :users do 
     get 'personalinfos' => 'personalinfos#index'

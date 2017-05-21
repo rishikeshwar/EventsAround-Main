@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   	@user = User.find_by(name: params[:name])
   	if @user and @user.authenticate(params[:password])
   		session[:user_id] = @user.id
-  		redirect_to @user
+  		redirect_to root_url
   	else 
   		redirect_to login_url, alert:"Invalid Username or Password"
   	end
