@@ -51,6 +51,11 @@ class UsersController < ApplicationController
   def create
     session[:user_id] = nil
     @user = User.new(user_params)
+    o = [('a'..'z'), ('A'..'Z')].map(&:to_a).flatten
+    string = (0...10).map { o[rand(o.length)] }.join
+    @inipassword = string
+    @user.password = string
+    @user.password_confirmation = string
     if User.exists?(name: @user.name)
       redirect_to new_user_path , alert: "EmailId already Exists"
       return 
@@ -61,6 +66,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+        UserMailer.welcome_email(@user, @inipassword).deliver_now
         format.html { redirect_to @user, notice: 'User was successfully created and validated' }
         format.json { render :show, status: :created, location: @user }
         session[:user_id] = @user.id
@@ -78,7 +85,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to login_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
