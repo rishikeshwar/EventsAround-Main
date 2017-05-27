@@ -89,5 +89,6 @@ config.assets.digest = true
   end
 
   # Do not dump schema after migrations.
+  config.action_mailer.default_url_options = { :host => "thebestapp12.herokuapp.com" }
   config.active_record.dump_schema_after_migration = false
 end
