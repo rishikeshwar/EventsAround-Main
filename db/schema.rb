@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20170511184606) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "phoneno"
-    t.string   "emailid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

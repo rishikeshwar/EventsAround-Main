@@ -20,6 +20,8 @@ group :development do
   gem 'rails_12factor'
 end
 
+# The Gmail Authentication gem
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 gem "font-awesome-rails"
 # Use Puma as the app server

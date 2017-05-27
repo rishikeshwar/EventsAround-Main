@@ -30,16 +30,17 @@
 <div class="personalinfocontrollerindex container">
   <div class="row container12">
     <div class="col-lg-4 col-md-4"></div>
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6 printup">
         <h2><i class="fa fa-user-circle" aria-hidden="true" ></i><%= @check.name %></h2>
-        <h3><i class="fa fa-user-circle-o" aria-hidden="true" ></i><%= @check2.name %></h3>
+        <h3><i class="fa fa-envelope" aria-hidden="true" ></i><%= @check2.name %></h3>
         <h3><i class="fa fa-phone" aria-hidden="true" ></i><%= @check.phoneno %></h2>
-        <h3><i class="fa fa-envelope" aria-hidden="true" ></i><%= @check.emailid %></h2>
     </div>
         <% puts "Yeah yeah it is coming" %>
     <% else %>
       <div class="col-lg-4 col-md-4"></div>
-      <h1>Nothing Exist so Update it</h1>
+      <div class="printup">
+        <h1>Nothing Exist so Update it</h1>
+      </div>
     <% end %>
   </div>
 </div>  
@@ -75,19 +76,15 @@
                 </div>
                 <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
 
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user-circle" aria-hidden="true" ></i></span>
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true" ></i></span>
 
-                    <%= text_field_tag(:name, params[:name], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Name') %>
+                    <%= text_field_tag(:name, params[:name], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Email Id') %>
                   </div>
                 <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-phone" aria-hidden="true" ></i></span>
                     <%= text_field_tag(:phoneno, params[:phoneno], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Phone Number') %>
                     </div>
                     <% params[:user_id] = session[:user_id] %>
-                    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
-                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope " aria-hidden="true" ></i></span>
-                    <%= text_field_tag(:emailid, params[:emailid], class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Email Id') %>
-                    </div>
 
                 <div class="buttonlogin">
                   <button class="btn btn-lg btn-primary wow fadeInUp" data-wow-delay="1s"><i class="fa fa-sign-in " aria-hidden="true" ></i>Update</button>

@@ -380,22 +380,26 @@ hr {
 	margin-bottom: 30px !important;
 }
 
-/* personalinfocontrollerindexvalidation starts here */
-
-.personalinfocontrollerindexvalidation p {
-	color: green !important;
-	padding-bottom: 0px !important;
-	margin-bottom: 0px !important;
-	margin-top: 0px !important;
+.personalinfocontrollerindex .printup {
+	margin-top: 50px !important;
 }
 
-.sessionscontrollernew .header .enter .iclass i {
-	font-size: 15px !important;
-	margin-right: 0px !important;
-	padding-top: 5px !important;
-}
+	/* personalinfocontrollerindexvalidation starts here */
 
-/* personalinfocontrollerindexvalidation ends here */
+	.personalinfocontrollerindexvalidation p {
+		color: green !important;
+		padding-bottom: 0px !important;
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+	}
+
+	.sessionscontrollernew .header .enter .iclass i {
+		font-size: 15px !important;
+		margin-right: 0px !important;
+		padding-top: 5px !important;
+	}
+
+	/* personalinfocontrollerindexvalidation ends here */
 
 /* personalinfocontrollerindex ends here */
 

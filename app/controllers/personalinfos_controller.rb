@@ -42,7 +42,7 @@ class PersonalinfosController < ApplicationController
 
 	"This method personalinfo_params is called from create method"
 	def personalinfo_params 
-		params.permit(:id, :user_id, :name, :phoneno, :emailid)
+		params.permit(:id, :user_id, :name, :phoneno)
 	end
 
 end

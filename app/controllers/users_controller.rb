@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @have = nil
     if session[:user_id] != nil
       @have = User.find(session[:user_id])
-      if @have.name == "rishikeshwar" and @have != nil
+      if @have.name == "rishikeshwar1@gmail.com" and @have != nil
         render :index
         return
       else 
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     @user = User.new(user_params)
     if User.exists?(name: @user.name)
-      redirect_to new_user_path , alert: "User Name already Exists"
+      redirect_to new_user_path , alert: "EmailId already Exists"
       return 
     else 
       puts "NO"
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully createn checked d.' }
+        format.html { redirect_to @user, notice: 'User was successfully created and validated' }
         format.json { render :show, status: :created, location: @user }
         session[:user_id] = @user.id
       else
