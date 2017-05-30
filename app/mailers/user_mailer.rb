@@ -18,7 +18,7 @@ class UserMailer < ApplicationMailer
   	@newpass = newpass
   	len = @newpass.length
   	@newpass.each_char.with_index do |char, index| 
-  		if len != 0 and len != index+1 
+  		if index != 0 and len != index+1 
   			@newpass[index] = '*'
   		end
   	end
