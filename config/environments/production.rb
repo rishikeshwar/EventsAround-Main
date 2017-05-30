@@ -91,4 +91,14 @@ config.assets.digest = true
   # Do not dump schema after migrations.
   config.action_mailer.default_url_options = { :host => "thebestapp12.herokuapp.com" }
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => "587",
+    :domain => 'gmail.com',
+    :user_name => 'rishikeshwar',
+    :password => 'rishi1@3',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  } 
 end
