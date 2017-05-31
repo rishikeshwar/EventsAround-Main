@@ -96,8 +96,8 @@ config.assets.digest = true
     :address => 'smtp.sendgrid.net',
     :port => "587",
     :domain => 'gmail.com',
-    :user_name => 'rishikeshwar',
-    :password => 'rishi1@3',
+    :user_name => ENV['username'],
+    :password => ENV['password'],
     :authentication => 'plain',
     :enable_starttls_auto => true
   } 
