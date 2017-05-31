@@ -59,6 +59,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.delivery_method = :smtp
+
+  "Change the environment variables to your username and password whenever required to run locally"
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => "587",
