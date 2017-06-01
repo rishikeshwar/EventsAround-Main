@@ -35,6 +35,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 wow bounceInLeft">
+        <div>
+        <h1><%= session[:user_id] %></h1>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <% end %>
+    </div>
           <h1>Find Events Around you</h1>
           <p>This is a dummy text nothing to do with it Let it be just like that. No need to touch or click on it as it does nothing other than the display part. So please stay away from it and as far as possible. Please please do not touch no matter what, i dont see any use even you shouldnt see</p>
           <button class="btn btn-lg btn-primary">Host Events</button>

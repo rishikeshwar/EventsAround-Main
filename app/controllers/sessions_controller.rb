@@ -27,4 +27,18 @@ class SessionsController < ApplicationController
   	session[:user_id] = nil
   	redirect_to login_url, alert: "Successfull"
   end
+
+   def creategoogle
+    puts "comingpleasecoming"
+    user = User.from_omniauth(env["omniauth.auth"])
+    
+    localuser = User.find_by(name: user.name)
+    session[:user_id] = localuser.id
+    redirect_to root_path
+  end
+
+  def destroygoogle
+    session[:user_id] = nil
+    redirect_to root_path
+  end
 end

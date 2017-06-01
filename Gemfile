@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.0.2'
 # For sending mails to others
 gem 'mail'
+
+#This is for google authentication
+gem "omniauth-google-oauth2", "~> 0.2.1"
 # Use mysql as the database for Active Record
 group :production do 
   gem 'pg'

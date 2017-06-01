@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   #get 'admin/index'
 
   #get 'sessions/new'
+  get 'auth/:provider/callback', to: 'sessions#creategoogle'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroygoogle', as: 'signout'
+  resources :sessions, only: [:creategoogle, :destroygoogle]
 
   get 'sessions/create'
 
