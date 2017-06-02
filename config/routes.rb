@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   #get 'sessions/new'
   get 'auth/:provider/callback', to: 'sessions#creategoogle'
   get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroygoogle', as: 'signout'
+  get 'signout', to: 'sessions#destroygoogle', as: 'signoutgoogle'
   resources :sessions, only: [:creategoogle, :destroygoogle]
+
 
   get 'sessions/create'
 
