@@ -70,6 +70,8 @@ GEM
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
@@ -113,6 +115,8 @@ GEM
     omniauth (1.6.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
+    omniauth-facebook (4.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.2.10)
       addressable (~> 2.3)
       jwt (~> 1.0)
@@ -205,12 +209,14 @@ DEPENDENCIES
   bcrypt
   byebug
   coffee-rails (~> 4.2)
+  figaro
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   mail
   mysql2 (>= 0.3.18, < 0.5)
+  omniauth-facebook
   omniauth-google-oauth2 (~> 0.2.1)
   pg
   puma (~> 3.0)
