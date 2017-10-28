@@ -1,0 +1,11 @@
+<h1>events Index</h1>
+<tbody>
+    <% @events.each do |event| %>
+      
+        <h2><%= event.name %></h2>
+       
+        <td><%= link_to 'Edit', edit_user_event_path(@user, event) %></td>
+        <td><%= link_to 'Destroy', user_event_path(@user, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+    <% end %>
+  </tbody>

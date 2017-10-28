@@ -1,0 +1,30 @@
+<%= form_for(user) do |f| %>
+  
+<fieldset>
+
+  <div class="newuser">
+    <div class="field">
+      <div class="row">
+        <div class="col-lg-4 col-md-4"></div>
+        <div class="col-lg-4 col-md-4"> 
+          <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true" ></i></span>
+            <%= f.text_field(:name, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Email Id') %>
+          </div>
+
+
+            <div class="col-lg-6 col-md-6"></div>
+            <div class="col-lg-6 col-md-6">
+              <div class="actions">
+                <%= button_tag(class: 'btn-lg btn-success wow fadeInUp', data: {wow: {delay: 'ls'}} )do  %>
+                  <i class="fa fa-user" aria-hidden="true" > Create User</i>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</fieldset>
+<% end %>

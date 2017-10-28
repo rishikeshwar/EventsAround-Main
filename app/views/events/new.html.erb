@@ -1,0 +1,55 @@
+<h1>events new</h1>
+<%= form_tag(user_events_path, method: :post) do %>
+<fieldset>
+	<legend>Please Enter below information</legend>
+	<div class="container">
+		<%= label_tag :lname, 'Event Name' %>
+		<%= text_field_tag :name, params[:name] %>
+		
+		<%= label_tag :lvenue, 'Venue' %>
+		<%= text_field_tag :venue, params[:venue] %>
+
+		<%= label_tag :linfo, 'Information' %>
+		<%= text_area_tag :information, params[:information] %>
+
+		<%= label_tag :fweb, 'fest website' %>
+		<%= text_field_tag :festwebsite, params[:festwebsite] %>
+
+		<%= label_tag :fb, 'fb link' %>
+		<%= text_field_tag :fblink, params[:fblink] %>
+
+		<%= label_tag :sdate, 'start date' %>
+		<%= date_select('range1', 'startdate', :order => [:month, :day, :year])%>
+
+
+		<%= label_tag :edate, 'end date' %>
+		<%= date_select('range2', 'enddate', :order => [:month, :day, :year])%>
+
+		<%= label_tag :e1, 'Email Id' %>
+		<%= text_field_tag :email1, params[:email1] %>
+
+		<%= label_tag :e2, 'Secondary Email Id' %>
+		<%= text_field_tag :email2, params[:email2] %>
+
+		<%= label_tag :p1, 'Phone 1' %>
+		<%= text_field_tag :phone1, params[:phone1] %>
+
+
+		<%= label_tag :p2, 'Phone 2' %>
+		<%= text_field_tag :phone2, params[:phone2] %>
+
+
+		<%= label_tag :lfee, 'Fee' %>
+		<%= text_field_tag :fee, params[:fee] %>
+
+		
+	</div>
+	<div>
+		<%= submit_tag 'Submit' %>
+	</div>
+</fieldset>
+
+		
+
+
+<%end%>

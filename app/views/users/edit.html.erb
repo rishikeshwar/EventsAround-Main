@@ -1,0 +1,34 @@
+<%= form_for(@user) do |f| %>
+  
+<fieldset>
+
+  <div class="newuser">
+    <div class="field">
+      <div class="row">
+        <div class="col-lg-4 col-md-4"></div>
+        <div class="col-lg-4 col-md-4"> 
+          <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true" ></i></span>
+            <% @have = User.find(session[:user_id]) %>
+            <% params[:name] = @have.name %>
+            <%= f.text_field(:password, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'New Password') %>
+
+          </div>
+           	<%= f.text_field(:password_confirmation, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Confirm Password') %>
+
+
+            <div class="col-lg-6 col-md-6"></div>
+            <div class="col-lg-6 col-md-6">
+              <div class="actions">
+                <%= button_tag(class: 'btn-lg btn-success wow fadeInUp', data: {wow: {delay: 'ls'}} )do  %>
+                  <i class="fa fa-user" aria-hidden="true" > Update Password</i>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</fieldset>
+<% end %>
