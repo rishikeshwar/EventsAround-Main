@@ -1,0 +1,137 @@
+
+
+
+
+
+
+<%= csrf_meta_tags %>
+<div class="events_new">
+
+<div class="container">
+
+  <div class="row body">
+    
+      <ul>
+      <center>
+      	    <h1><span class = "label label-normal">EDIT EVENT</span></h1>
+      	    </center>
+      	    <br>
+      	    
+      	<%= form_tag(user_event_path(@user, @event), method: :put) do %>
+
+        <p>
+        	<li>
+          		<%= label_tag :lname, 'Event Name'%>
+		    	<%= text_field_tag :name, @event.name, class: 'form-control'%>
+         	</li>
+         </p>
+
+         <p>
+         	<li>
+          	<%= label_tag :lvenue, 'Venue'%>
+			<%= text_field_tag :venue, @event.venue, class: 'form-control' %> 
+			 </li>
+          </p>
+     
+        	
+        
+         <p>
+         	 <li>
+          		<%= label_tag :lftype, 'Fest Type' %>
+				<%= text_field_tag :festtype, @event.festtype, class: 'form-control'%> 
+        	</li> 
+         </p>
+               
+
+        <p>
+        	<li>
+           		<%= label_tag :linfo, 'Information' %>
+		   		<%= text_area_tag :information, @event.information, size: '46x4', class: 'form-control' %>
+      		</li>
+        </p>
+
+        <p>
+        <li>
+           <%= label_tag :fweb, 'fest website' %>
+		   <%= text_field_tag :festwebsite, @event.festwebsite, class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+          <%= label_tag :fb, 'fb link' %>
+		  <%= text_field_tag :fblink, @event.fblink, class: 'form-control' %>
+        </li>
+        </p>
+
+
+
+        <p>
+        <li>
+		       <%= label_tag :sdate, 'start date' %>
+         <%= text_field_tag :startdate, @event.startdate, class: 'form-control', type: 'date' %>
+        </li>
+        </p>
+
+
+        <p>
+        <li>
+          <%= label_tag :edate, 'end date' %>
+         <%= text_field_tag :enddate, @event.enddate, class: 'form-control', type: 'date' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+			<%= label_tag :e1, 'Email Id' %>
+			<%= text_field_tag :email1, @event.email1, class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+    		<%= label_tag :e2, 'Secondary Email Id' %>
+			<%= text_field_tag :email2, @event.email2, class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+        	<%= label_tag :p1, 'Phone 1' %>
+			<%= text_field_tag :phone1, @event.phone1, class: 'form-control' %>
+        </li>
+        </p>
+        
+
+        <p>
+        <li>
+        	<%= label_tag :p2, 'Phone 2' %>
+			<%= text_field_tag :phone2, @event.phone2, class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+        	<%= label_tag :lfee, 'Fee' %>
+			<%= text_field_tag :fee, @event.fee, class: 'form-control' %>
+        </li>
+        </p>
+
+        
+        <li>
+          <%= submit_tag 'Submit', class: 'btn btn-submit' %>
+        </li>
+
+        <%end%>
+      </ul>
+   
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+

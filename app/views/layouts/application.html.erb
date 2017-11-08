@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventsaround</title>
+    <%= csrf_meta_tags %>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <!-- Navigation Starts Here -->
+<div>
+  <div id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container wow slideInDown">
+      <div class="navbar-header">
+        <button role="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">EventsAround</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/print_events">Events</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/users/new">SignUp</a></li>
+          <% @have = User.find_by(id: session[:user_id]) %>
+          <% if @have != nil%>
+            <li><a>User:  <%= @have.name.split('@').first %></a></li>
+            <li><%= link_to 'Profile', user_personalinfos_path(session[:user_id]) %></li>
+            <li> <%= link_to 'Logout',logout_url , method: :delete, data: {  confirm: 'Are you sure?' } %></li>
+          <% else %>
+            <li><a href="/login">Login</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation ends here -->
+  <div class="applicationhtml">
+    <div class="current-user">
+
+    </div>
+  </div>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <!--- Footer Starts Here -->
+
+
+  <div id="footer" class="footer">
+    <div class="contain">
+      <div class="row">
+      <div class="contactus">
+        <h3><strong>Contact Us</strong></h3>
+      </div>
+      <hr>
+        <div class="col col-lg-4 col-md-4">
+          <h4>Rishikeshwar</h4>
+          <div class="col1">
+            <p><i class="fa fa-home" aria-hidden="true"></i> Munnekollala, Marathalli, Bangalore</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> rishikeshwar1@gmail.com</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> +91 8087770414</p>
+          </div>
+        </div>
+        <div class="col col-lg-4 col-md-4">
+          <h4>Vivek</h4>
+          <div class="col1">
+            <p><i class="fa fa-home" aria-hidden="true"></i> Room No. 707, Amrita College, Bangalore</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> padigelavivekreddy@gmail.com</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9490455504</p>
+          </div>
+        </div>
+        <div class="col col-lg-4 col-md-4">
+          <h4>Stay in touch</h4>
+            <i class="social fa fa-facebook" aria-hidden="true"></i>
+            <i class="social fa fa-twitter" aria-hidden="true"></i>
+            <i class="social fa fa-pinterest" aria-hidden="true"></i>
+            <i class="social fa fa-linkedin" aria-hidden="true"></i>
+            <i class="social fa fa-youtube" aria-hidden="true"></i>
+            <i class="social fa fa-github" aria-hidden="true"></i>
+            <br>
+            <input type="email" placeholder="Subscribe for Updates">
+            <button class="btn btn-success">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!--- Footer Ends Here -->
+</html>

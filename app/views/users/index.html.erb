@@ -1,0 +1,69 @@
+
+<div class="userscontrollerindex container">
+<p id="notice"><%= notice %></p>
+
+
+<% if @have != nil%>
+    <h2>Loged in as <%= @have.name %></h2>
+    <%= link_to 'logout', login_url %></td>
+  <% else %>
+    <h2>Nothing</h2>
+  <% end %>
+<h1>Users</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
+<br>
+<button class="btn searchbutton" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <i class="fa fa-search" aria-hidden="true"></i>&nbsp
+Search
+  </button>
+
+<div class="collapse" id="collapseExample">
+  <div class="col-md-6 col-lg-6 col-xs-6 back">
+    <br>
+    <br>
+  <%= form_for(@user) do |f| %>
+  <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s" style="margin-top: 10px;">
+    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-tags" aria-hidden="true" ></i></span>
+    <%= f.text_field(:name, class: 'form-control tags', area: {describedby: 'sizing-addon1'}, placeholder: 'Search by Tag') %>
+  </div>
+  <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s" style="margin-top: 10px;">
+    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-address-card" aria-hidden="true" ></i></span>
+    <%= f.text_field(:name, class: 'form-control city', area: {describedby: 'sizing-addon1'}, placeholder: 'Search by City') %>
+  </div>
+  <div class="searchbydate">
+    Search by Date:
+     <%= check_box_tag(:SearchDate, params[:SearchDate], :class => 'checkbox') %>
+  </div>
+  <br>
+  <br>
+		<%= date_select('range1', 'start_date1', :order => [:month, :day, :year])%> &nbsp ----- &nbsp
+		<%= date_select('range2', 'start_date2', :order => [:month, :day, :year])%> <br>
+  <% end %>
+</div>
+</div>
+</div>

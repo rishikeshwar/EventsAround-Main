@@ -1,0 +1,101 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+ <body>
+<div class="newuserscontrollernew">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+				<div class="heading">
+					<center>
+						<h2><i class="fa fa-user-secret"></i>&nbsp; New User</h2>
+					</center>
+				</div>
+				<div class="col-lg-1"></div>
+				<div class="col-lg-11">
+					<div class="notice">
+						<% count = 0 %>
+						<% if flash[:notice] %>
+	                		<% flash[:notice].to_s.split('$').each do |msg| %>
+                    			<% if count%2 == 1 %>
+	            	        		<div class="iclass">
+                	        			<p id="notice"><i class="fa fa-dot-circle-o " aria-hidden="true" ></i><%= msg %></p><br>
+		                        	</div>
+                    			<% end %>
+                    			<% count += 1 %>
+		                	<% end %>
+            			<% end %>
+            		</div>
+				</div>
+				
+				<%= form_for(@user) do |f| %>
+            		<div class="col-lg-1 col-md-1"></div>
+            		<div class="col-lg-10 col-md-10">
+            			<div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+            				<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true" ></i></span>
+            				<%= f.text_field(:name, class: 'form-control', area: {describedby: 'sizing-addon1'}, placeholder: 'Email Id') %>
+          				</div>
+          			</div>
+          			
+          			<div class="col-lg-4 col-md-4"></div>
+          			<div class="col-lg-8 col-md-8">
+          				<div class="createuserbutton">
+          					<button class="btn btn-primary wow fadeInUp pull-left" data-wow-delay="1s"><i class="fa fa-sign-in " aria-hidden="true" ></i>Create an Account</button>
+                		</div>
+                	</div>
+                <% end %>
+                <div class="col-md-1 col-lg-1"></div>
+          		<div class="col-md-10 col-lg-10"><hr></div>
+          		<div class="col-md-1 col-lg-1"></div>
+          		<div class="otherways">
+            		<div class="head">
+              			<h2>Or Connect Using</h2>
+            		</div>
+            		<div class="col-lg-6 col-md-6">
+              			<div class="googlelogin">
+                			<%= link_to "<i class='fa fa-google-plus' aria-hidden='true'></i> Google".html_safe, "/auth/google_oauth2", :id => "sign_in", :class => "button" %><br>
+              			</div>
+            		</div>
+
+            		<div class="col-lg-6 col-md-6">
+              			<div class="facebooklogin">
+                		<%= link_to "<i class='fa fa-facebook' aria-hidden='true'></i> Facebook".html_safe, "/auth/facebook", :id => "sign_in", :class => "button" %>
+              			</div>
+            		</div>
+          		</div>
+			</div>
+			<div class="col-lg-6 col-md-6 wow bounceInRight">
+          		<img src="evs.png" alt="">
+
+        	</div>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/a1wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>

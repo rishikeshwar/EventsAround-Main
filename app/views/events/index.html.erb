@@ -1,0 +1,73 @@
+<body>
+<div id="pricing" class="pricing" style="margin-bottom: -100px !important;">
+    <div class="container">
+      <div class="row">
+        <h2 class="wow fadeInUp" style="font-size: 50px !important">Your Fests and Events</h2>
+        <h2>
+            <a href="<%= new_user_event_path(session[:user_id])%>">
+            <button class="btn btn-lg btn-primary host"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Host an Event</button>
+            </a> 
+        </h2>
+        <p class="wow fadeInUp" data-wow-delay="0.4s">This is a dummy text talking about Pricing</p>
+        <% i = 1 %>
+        <% @events.each do |event| %>
+            <div class="col col-lg-4 col-md-4 wow flipInY" data-wow-delay="0.7s">
+            <div class="packages">
+                <h1><%= event.name %></h1>
+                <h3><%= event.venue %></h3>
+                <hr>
+                <li><b>Type of Fest:</b> <%= event.festtype %></li>
+                <li><b>Fest Link:</b> <%= event.festwebsite %></li>
+                <li><b>FB Link:</b> <%= event.fblink %></li>
+                
+
+                <li><b>Fest Start:</b> <%= event.startdate %></li>
+                <li><b>Fest End:</b> <%= event.enddate %></li>
+                <% s = "#" + i.to_s %>
+                <a class="btn btn-primary" data-toggle="collapse" href="<%= s %>" aria-expanded="false" aria-controls="collapseExampl" style="margin-top: 20px;">
+                    View Details
+                </a>
+                <br>
+                <h6>
+                <div class="btn-group">
+                <%= link_to 'Edit', edit_user_event_path(@user, event), class: 'btn btn-success', style: 'color: #ffffff !important;' %> 
+                <%= link_to 'Delete', user_event_path(@user, event),class: 'btn btn-danger', style: 'color: #ffffff !important;', method: :delete, data: { confirm: 'Are you sure?' } %> 
+                </div>
+                </h6>
+                <div class="collapse" id="<%= i.to_s %>">
+
+                    <div class="card-block" style="margin-top: 50px;">
+                        <p><b><%= event.information %></b></p>
+                    </div>
+
+                    <div class="card-block" style="margin-top: -50px;">
+                        <li><h3>Contact Information</h3></li>
+                        <li><b>Phone Number 1:</b> <%= event.phone1 %></li>
+                        <li><b>Phone Number 2:</b> <%= event.phone2 %></li>
+                        <li><b>Email id 1:</b> <%= event.email1 %></li>
+                        <li><b>Email id 2:</b> <%= event.email2 %></li>
+                        <li><b>Entry Fee:</b> <%= event.fee %></li>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <% if i % 3 == 0 %>
+                <div class="col col-lg-12 col-md-12 wow flipInY" data-wow-delay="0.8s">
+                </div>
+            <% end %>
+            <% i = i + 1 %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>

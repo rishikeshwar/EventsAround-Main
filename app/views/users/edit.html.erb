@@ -1,0 +1,43 @@
+
+<%= form_tag(user_path(@user), method: :patch) do %>
+  
+  <div class="newuser newsessionscontrollernew">
+    <div class="field">
+      <div class="row textfieldsafterheading">
+        <div class="col-lg-4 col-md-4"></div>
+        <div class="col-lg-4 col-md-4"> 
+        <div class="notice" style="margin-top: 200px; ">
+                  <% if flash[:alert] %>
+                    <p id="notice" ><font color="red"><%= flash[:alert] %></font>></p>
+                  <% end %>
+                </div>
+          <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s" style="margin-top: 30px;">
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-unlock" aria-hidden="true" style="font-size: 20px;"></i></span>
+            <% @have = User.find(session[:user_id]) %>
+            <% params[:name] = @have.name %>
+
+            <%= text_field_tag :oldpassword, params[:oldpassword], placeholder: 'Old Password',class: 'form-control', area: {describedby: 'sizing-addon1'}, style: 'border-radius: 0px;'%>
+          </div>
+          <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-unlock-alt" aria-hidden="true" style="font-size: 20px;"></i></span>
+
+            <%= text_field_tag :newpassword, params[:newpassword], placeholder: 'New Password',class: 'form-control', area: {describedby: 'sizing-addon1'}, style: 'border-radius: 0px;'%>
+
+            <%= text_field_tag :newpassword_conformation, params[:newpassword_conformation], placeholder: 'Confirm New Password',class: 'form-control', area: {describedby: 'sizing-addon1'}, style: 'border-radius: 0px;'%>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6"></div>
+            <div class="col-lg-6 col-md-6">
+              <div class="actions">
+                <%= button_tag(class: 'btn-md btn-success wow fadeInUp', data: {wow: {delay: 'ls'}} )do  %>
+                  <i class="fa fa-user" aria-hidden="true" > Update Password</i>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% end %>

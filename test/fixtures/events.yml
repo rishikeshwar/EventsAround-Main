@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  name: MyString
+  venue: MyString
+  information: MyText
+  festwebsite: MyString
+  fblink: MyString
+  festtype: 1
+  startdate: 2017-06-19
+  enddate: 2017-06-19
+  email1: MyString
+  email2: MyString
+  phone1: MyString
+  phone2: MyString
+  fee: 1
+
+two:
+  user_id: 1
+  name: MyString
+  venue: MyString
+  information: MyText
+  festwebsite: MyString
+  fblink: MyString
+  festtype: 1
+  startdate: 2017-06-19
+  enddate: 2017-06-19
+  email1: MyString
+  email2: MyString
+  phone1: MyString
+  phone2: MyString
+  fee: 1
