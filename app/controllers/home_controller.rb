@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 	end
 
 	def contact 
-		UserMailer.contact_email(params).deliver_now
+		UserMailer.contact_email(params[:name], prams[:email], params[:phone], params[:message]).deliver_now
 		redirect_to root_url
 	end
 end
