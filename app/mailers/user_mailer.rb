@@ -26,11 +26,8 @@ class UserMailer < ApplicationMailer
   	mail(to: @user.name, subject: 'Attention !!! Password Updated', template_name: "update_email")
   end
 
-  def contact_email(names, email, phone, message) 
-    @name = names
-    @email = email
-    @phone = phone
-    @message = message
-    mail(from: email to: 'eventsaroundu@gmail.com', subject: 'Contacting from EventsAround', template_name: "contact_email")
+  def contact_email(params) 
+    @params = params 
+    mail(from: params[:email],  to: 'eventsaroundu@gmail.com', subject: 'Contacting from EventsAround', template_name: "contact_email")
   end
 end
